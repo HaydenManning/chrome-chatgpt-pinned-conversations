@@ -1,127 +1,92 @@
-.pinned-conversations-wrapper {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 0.5rem;
+/* Pinned conversations section styling */
+#pinned-conversations-section {
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 1rem;
 }
 
-.pinned-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+#pinned-conversations-section .empty-pinned-state {
   padding: 0.5rem 1rem;
-  margin-bottom: 0.25rem;
-}
-
-.pinned-header h3 {
+  text-align: center;
+  color: var(--text-secondary, rgba(255, 255, 255, 0.5));
   font-size: 0.875rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-}
-
-.pinned-count {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.7);
-  padding: 0.125rem 0.5rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-}
-
-.pinned-conversations-list {
-  max-height: 300px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
-}
-
-.pinned-conversations-list::-webkit-scrollbar {
-  width: 6px;
-}
-
-.pinned-conversations-list::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.pinned-conversations-list::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 3px;
-}
-
-.pinned-conversation {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  margin: 0.125rem 0.5rem;
-  border-radius: 0.5rem;
-  cursor: move;
-  transition: background-color 0.2s ease;
-  position: relative;
-}
-
-.pinned-conversation:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-.pinned-conversation.dragging {
-  opacity: 0.5;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.pinned-conversation-link {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  color: inherit;
-  text-decoration: none;
-  min-width: 0;
-}
-
-.conversation-icon {
-  margin-right: 0.75rem;
-  font-size: 1rem;
-  flex-shrink: 0;
-}
-
-.conversation-title {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.9);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.unpin-button {
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  padding: 0.25rem;
-  margin-left: 0.5rem;
-  border-radius: 0.25rem;
+  opacity: 0.7;
+  /* Match the height and spacing of conversation items */
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0.125rem 0;
 }
 
-.pinned-conversation:hover .unpin-button {
-  opacity: 1;
+/* Dark mode empty state */
+@media (prefers-color-scheme: dark) {
+  #pinned-conversations-section .empty-pinned-state {
+    color: rgba(255, 255, 255, 0.5);
+  }
 }
 
-.unpin-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.8);
+/* Light mode empty state */
+@media (prefers-color-scheme: light) {
+  #pinned-conversations-section .empty-pinned-state {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Pin/star icon styling */
+.pinned-conversation .icon {
+  color: #fbbf24 !important;
+}
+
+/* Drag and drop styling */
+.pinned-conversation.dragging {
+  opacity: 0.5;
+}
+
+/* Unpin button styling */
+.unpin-button:hover .icon {
+  color: #ef4444 !important;
+}
+
+/* Pinned conversation indicators in main chat list */
+.pinned-indicator {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.pinned-icon {
+  color: #fbbf24 !important;
+  opacity: 0.8;
+}
+
+/* Hide pinned indicators inside the pinned conversations section */
+#pinned-conversations-section .pinned-indicator {
+  display: none !important;
+}
+
+/* Hide pinned conversations from main chat list (alternative approach) */
+.hide-pinned-from-chats .pinned-conversation-duplicate {
+  display: none !important;
 }
 
 .pin-conversation-button {
   width: 100%;
   text-align: left;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+  border-radius: 0.375rem;
 }
 
 .pin-conversation-button:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--surface-hover, rgba(0, 0, 0, 0.05)) !important;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .pin-conversation-button:hover {
+    background-color: var(--surface-hover, rgba(255, 255, 255, 0.05)) !important;
+  }
 }
 
 @media (prefers-color-scheme: light) {
