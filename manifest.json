@@ -2,21 +2,19 @@
   "manifest_version": 3,
   "name": "ChatGPT Pinned Conversations",
   "version": "1.0.0",
-  "description": "Pin and organize your favorite ChatGPT conversations for quick access",
-  "permissions": [
-    "storage",
-    "tabs"
-  ],
-  "host_permissions": [
-    "https://chat.openai.com/*",
-    "https://chatgpt.com/*"
-  ],
+  "description": "Pin and organize your favorite ChatGPT conversations for quick access. Keep your most important conversations at the top of your sidebar!",
+  "author": "ChatGPT Pinned Conversations Team",
+  "homepage_url": "https://github.com/HaydenManning/chrome-chatgpt-pinned-conversations",
+  "icons": {
+    "16": "icons/16x16.png",
+    "48": "icons/48x48.png",
+    "128": "icons/128x128.png"
+  },
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://chat.openai.com/*", "https://chatgpt.com/*"],
   "content_scripts": [
     {
-      "matches": [
-        "https://chat.openai.com/*",
-        "https://chatgpt.com/*"
-      ],
+      "matches": ["https://chat.openai.com/*", "https://chatgpt.com/*"],
       "js": ["content.js"],
       "css": ["styles.css"],
       "run_at": "document_idle"
@@ -27,6 +25,12 @@
   },
   "options_page": "options.html",
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_title": "ChatGPT Pinned Conversations",
+    "default_icon": {
+      "16": "icons/16x16.png",
+      "48": "icons/48x48.png",
+      "128": "icons/128x128.png"
+    }
   }
 }

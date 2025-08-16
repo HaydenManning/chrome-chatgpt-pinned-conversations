@@ -1,0 +1,15 @@
+{
+  "name": "chatgpt-pinned-conversations",
+  "version": "1.0.0",
+  "description": "Chrome extension to pin and organize ChatGPT conversations",
+  "scripts": {
+    "package": "node package-extension.js",
+    "zip": "npm run package",
+    "clean": "rimraf *.zip"
+  },
+  "author": "ChatGPT Pinned Conversations Team",
+  "license": "MIT",
+  "devDependencies": {
+    "archiver": "^5.3.1"
+  }
+}
