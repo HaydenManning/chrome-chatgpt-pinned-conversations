@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT Pinned Conversations - Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>ChatGPT Pinned Conversations</h1>
+      <p class="subtitle">Manage your settings and pinned conversations</p>
+    </header>
+
+    <section class="settings-section">
+      <h2>Settings</h2>
+      <div class="settings-grid">
+        <label class="setting-item">
+          <input type="checkbox" id="enableDragDrop" checked>
+          <div>
+            <span class="setting-name">Enable Drag & Drop</span>
+            <span class="setting-description">Allow reordering pinned conversations by dragging</span>
+          </div>
+        </label>
+        
+        <label class="setting-item">
+          <input type="checkbox" id="showPinCount" checked>
+          <div>
+            <span class="setting-name">Show Pin Count</span>
+            <span class="setting-description">Display the number of pinned conversations</span>
+          </div>
+        </label>
+      </div>
+    </section>
+
+    <section class="pinned-section">
+      <div class="section-header">
+        <h2>Pinned Conversations</h2>
+        <button id="clearAll" class="danger-button">Clear All</button>
+      </div>
+      
+      <div id="pinnedList" class="pinned-list">
+        <div class="empty-state">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+          </svg>
+          <p>No pinned conversations yet</p>
+          <p class="empty-description">Pin conversations from ChatGPT to see them here</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <button id="exportData" class="secondary-button">Export Data</button>
+      <button id="importData" class="secondary-button">Import Data</button>
+      <input type="file" id="importFile" accept=".json" style="display: none;">
+    </footer>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
