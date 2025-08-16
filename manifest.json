@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "ChatGPT Pinned Conversations",
   "version": "1.0.0",
-  "description": "Pin and organize your favorite ChatGPT conversations for quick access. Keep your most important conversations at the top of your sidebar!",
+  "description": "Pin and organize your favorite ChatGPT conversations for quick access. Keep important conversations at the top of your sidebar!",
   "author": "ChatGPT Pinned Conversations Team",
   "homepage_url": "https://github.com/HaydenManning/chrome-chatgpt-pinned-conversations",
   "icons": {
