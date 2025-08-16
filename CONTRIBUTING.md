@@ -18,6 +18,7 @@ Before creating a bug report, please check the existing issues to avoid duplicat
 6. Include console errors if any
 
 **Bug Report Template:**
+
 ```
 **Describe the Bug**
 A clear description of what the bug is.
@@ -54,6 +55,7 @@ We welcome feature suggestions! Please:
 4. Consider how it fits with the extension's goals
 
 **Feature Request Template:**
+
 ```
 **Feature Description**
 A clear description of the feature you'd like to see.
@@ -76,12 +78,14 @@ Screenshots, mockups, or examples.
 #### Getting Started
 
 1. **Fork the repository**
+
    ```bash
-   git clone https://github.com/your-username/chatgpt-pinned-conversations.git
+   git clone https://github.com/HaydenManning/chrome-chatgpt-pinned-conversations.git
    cd chatgpt-pinned-conversations
    ```
 
 2. **Create a feature branch**
+
    ```bash
    git checkout -b feature/your-feature-name
    # or
@@ -96,12 +100,14 @@ Screenshots, mockups, or examples.
 #### Development Guidelines
 
 **Code Style:**
+
 - Use consistent indentation (2 spaces)
 - Follow existing naming conventions
 - Add comments for complex logic
 - Keep functions focused and small
 
 **File Organization:**
+
 - `content.js`: Main extension logic
 - `background.js`: Service worker functionality
 - `popup.*`: Extension popup interface
@@ -109,12 +115,14 @@ Screenshots, mockups, or examples.
 - `styles.css`: UI styling
 
 **JavaScript Best Practices:**
+
 - Use `const` and `let` instead of `var`
 - Use async/await for promises
 - Handle errors gracefully
 - Add console logging for debugging
 
 **Chrome Extension Best Practices:**
+
 - Follow Manifest V3 standards
 - Use chrome.storage.sync for data persistence
 - Minimize permissions requested
@@ -125,12 +133,14 @@ Screenshots, mockups, or examples.
 Before submitting a pull request:
 
 1. **Functional Testing**
+
    - Test all pin/unpin operations
    - Verify drag & drop reordering
    - Check cross-device sync (if possible)
    - Test options page functionality
 
 2. **Compatibility Testing**
+
    - Test on both chat.openai.com and chatgpt.com
    - Verify light and dark theme compatibility
    - Test with different screen sizes
@@ -144,6 +154,7 @@ Before submitting a pull request:
 #### Submitting Changes
 
 1. **Commit your changes**
+
    ```bash
    git add .
    git commit -m "feat: add new feature description"
@@ -152,6 +163,7 @@ Before submitting a pull request:
    ```
 
 2. **Push to your fork**
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -163,6 +175,7 @@ Before submitting a pull request:
    - List what you've tested
 
 **Pull Request Template:**
+
 ```
 ## Description
 Brief description of changes made.
@@ -190,11 +203,13 @@ Fixes #(issue number)
 ## 📋 Development Setup
 
 ### Prerequisites
+
 - Google Chrome browser
 - Basic knowledge of JavaScript and Chrome Extensions
 - Git for version control
 
 ### Project Structure
+
 ```
 chatgpt-pinned-conversations/
 ├── manifest.json          # Extension configuration
@@ -216,16 +231,19 @@ chatgpt-pinned-conversations/
 ### Key Components
 
 **Content Script (`content.js`)**
+
 - Injects the pinned conversations UI
 - Handles pin/unpin button creation
 - Manages drag & drop functionality
 - Detects conversations and updates indicators
 
 **Background Script (`background.js`)**
+
 - Handles extension lifecycle events
 - Provides conversation data to popup
 
 **Storage Management**
+
 - Uses `chrome.storage.sync` for cross-device sync
 - Stores pinned conversations and settings
 - Handles import/export functionality
@@ -233,22 +251,26 @@ chatgpt-pinned-conversations/
 ## 🔧 Technical Considerations
 
 ### Chrome Extension APIs
+
 - **Storage API**: For data persistence and sync
 - **Tabs API**: For conversation detection
 - **Runtime API**: For messaging between components
 
 ### Content Security Policy
+
 - No inline scripts or styles
 - All external resources must be bundled
 - Use nonce or hash for any dynamic content
 
 ### Performance
+
 - Minimize DOM queries
 - Use event delegation for dynamic content
 - Debounce rapid operations
 - Clean up event listeners
 
 ### Accessibility
+
 - Proper ARIA labels
 - Keyboard navigation support
 - High contrast compatibility
@@ -257,21 +279,25 @@ chatgpt-pinned-conversations/
 ## 🚨 Common Issues
 
 ### Extension Not Loading
+
 - Check manifest.json syntax
 - Verify all file paths are correct
 - Check browser console for errors
 
 ### Content Script Not Injecting
+
 - Verify host permissions in manifest
 - Check if ChatGPT's DOM structure changed
 - Ensure script runs at correct timing
 
 ### Storage Issues
+
 - Verify chrome.storage permissions
 - Check for quota limits
 - Handle sync conflicts gracefully
 
 ### UI Integration Problems
+
 - ChatGPT UI updates may break styling
 - Use robust selectors
 - Test on both light/dark themes
